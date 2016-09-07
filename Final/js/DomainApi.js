@@ -89,7 +89,7 @@ function buttonDomainCheck() {
 	var url = "https://api.godaddy.com/v1/domains/suggest?query=";
 	clearTableContents();
 
-	$('.table-results').height(160);
+	$('.table-results').height(200);
 	var $domain = url + $inputDomainName.val() + "&&&&&&&limit=12&";
 	domainQuery($domain);
 }
@@ -120,7 +120,7 @@ function domainQuery($eachUrl) {
 				var noOfCellsCount = 0;
 
 
-				if (i == 3 || i==7 || i==11) {
+				if (i == 2 || i==5 || i==8 || i==11) {
 					content += "</tr>";
 					$table.append(content);
 					content = '<tr>';
