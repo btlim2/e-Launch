@@ -1,0 +1,190 @@
+body {
+    height: 100%;
+        min-height: 100%;
+}
+
+.details {
+	font-size: 14px;
+}
+
+.source {
+	font-size:10px;
+}
+
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+}
+
+.content {
+    max-width: 80%;
+    margin: AUTO;
+	left: auto;
+	right: auto;
+	
+
+}
+
+#left-box{
+	float:left;
+	padding: 0px 10px 10px 10px;
+	margin: auto;
+	width: 50%;
+	text-align: left;
+}
+
+#right-box{
+	float:right;
+	padding: 10px;
+	margin: auto;
+	margin-top: 15px;
+	width: 45%;
+}
+
+#centering {
+	padding: 0px 400px 0px 400px;
+}
+
+.table-results {
+    width:98%;
+}
+
+#centering-table {
+	width: 70%;
+	margin: auto;
+}
+
+#div-table {
+	max-height: 400px;
+	display: block;
+	overflow: auto;
+	
+}
+
+#abn-table {
+	border-spacing: 10px;
+    border-collapse: separate;
+}
+
+table td{
+	padding: 5px 5px 0px 5px;
+}
+
+td.red {
+	border: 1px solid red;
+}
+
+td.green {
+	border: 1px solid green;
+}
+
+th, td {
+	border-bottom: 1px solid #dddddd;
+    font-size: 90%;
+    text-align: left;
+    padding: 0.75em 0.5em;
+    vertical-align: top;
+	max-width:50%;
+	white-space:wrap;
+}
+
+
+.img-middle {
+    margin: 4px auto;
+    vertical-align: middle;
+    display: inline;
+    box-sizing: content-box;
+    vertical-align: text-bottom;
+    cursor: pointer;
+    float: right;
+}
+
+
+#img-submit{
+	background-position: 0px 0px;
+	box-shadow: rgb(221, 221, 221) 0px 0px 0px 0px inset;
+    cursor: pointer;
+    display: block;
+    float: right;
+     height: 45px;
+	width: 45px;
+    text-align: left;
+    text-transform: capitalize;
+    vertical-align: top;
+    white-space: pre;
+	    margin: 1.5px 3px 1.5px 0px;
+    border: 0px none rgb(127, 127, 127);
+    font: normal normal 300 normal 18px/0px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(127, 127, 127) none 0px;
+    padding: 0px;
+    position: relative;
+}
+
+#div-abn-check {
+    width: 98%;
+    background-position: 0px 0px;
+    color: rgb(25, 25, 25);
+    height: 52px;
+    perspective-origin: 295.515625px 30px;
+    transform-origin: 295.515625px 30px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+    border-radius: 5px 5px 5px 5px;
+    font: normal normal 300 normal 15px/22px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(25, 25, 25) none 0px;
+    border: 1px solid #808285;
+    box-sizing: content-box;
+}
+
+#span-check-left{ 
+    color: rgb(127, 127, 127);
+    display: block;
+    float: left;
+    height: 40px;
+    width: 140px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+    border: 0px none rgb(127, 127, 127);
+    font: normal normal 300 normal 18px/40px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(127, 127, 127) none 0px;
+    padding: 10px 0px 10px 0px;
+    line-height: 1.5rem;
+		
+}
+
+#form-abn-check{
+    font-size:100%;
+    font-weight: 400;
+    box-shadow: rgb(221, 221, 221) 0px 0px 0px 0px inset;
+    color: rgb(127, 127, 127);
+    height: 50px;
+    width: 100%;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    border-radius: 5px 0 0 5px;
+    font: normal normal 300 normal 18px/22px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(127, 127, 127) none 0px;
+    padding: 5px 10px 5px 10px;
+}
+
+#inputName{
+    text-align:left;
+    background-position: 0px 50%;
+    
+    color: rgb(127, 127, 127);
+    height: 38px;
+    vertical-align: text-bottom;
+    width: 85%;
+    perspective-origin: 143px 18px;
+    transform-origin: 143px 18px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 50% / auto padding-box border-box;
+    border-top: 0px none rgb(127, 127, 127);
+    border-right: 0px solid #777;
+    border-bottom: 0px none rgb(127, 127, 127);
+    border-left: 0px none rgb(127, 127, 127);
+    font: normal normal 300 normal 30px/34px 'Open Sans', Helvetica, Arial, sans-serif;
+    
+    outline: rgb(127, 127, 127) none 0px;
+    padding: 0px 0px 0px 0px;
+	
+}

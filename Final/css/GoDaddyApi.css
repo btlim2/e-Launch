@@ -1,0 +1,265 @@
+/* Modal */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 30; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-link {
+    display: block;
+    width: 100% ;
+    max-width: 100%;
+    height: auto;
+    color: #333333;
+    background-color: white;
+    border-color: #cccccc;
+    margin-bottom: 5px;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid ;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+}
+
+.img-modal-link {
+    border: 1px black;
+}
+
+
+
+/* Others */
+
+.divider {
+    vertical-align: text-bottom;
+}
+
+a.nav {
+    color: #152235;
+        font-family: RalewayMedium,Helvetica,sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.table-results {
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 0px;
+}
+
+
+
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+}
+
+.v2 {
+	height: 400px;
+}
+
+#centering {
+	padding: 0px 410px 0px 410px;
+}
+
+.openModal {
+    float: right;
+    height: 25px;
+    width: 25px;
+}
+
+.openModal:hover {
+    cursor:pointer;
+}
+
+#left-box{
+	padding: 0px 10px 10px 10px;
+	margin: auto;
+	width: 49%;
+	text-align: left;
+    display: inline-block;
+}
+
+#right-box{
+	padding: 10px;
+	margin: auto;
+	margin-top: 15px;
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+	/* border: 1px solid #808285; */
+	
+}
+
+.content {
+    max-width: 80%;
+    margin: auto;
+	left: auto;
+	right: auto;
+}
+
+th, td.tdformat {
+    border-bottom: 1px solid #dddddd;
+    font-size: 90%;
+    text-align: left;
+    padding: 0.75em 0.5em;
+    vertical-align: top 0;
+}
+
+.img-middle {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    vertical-align: middle;
+    display: inline-block;
+    box-sizing: content-box;
+    vertical-align: text-bottom;
+    cursor: pointer;
+    float: right;
+}
+
+#img-submit{
+	background-position: 0px 0px;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    height: 45px;
+	width: 45px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: pre;
+    border: 0px none rgb(127, 127, 127);
+    font: normal normal 300 normal 18px/0px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(127, 127, 127) none 0px;
+
+
+}
+
+#div-domain-check {
+    width: 98%;
+	background-position: 0px 0px;
+    color: rgb(25, 25, 25);
+    height: 52px;
+    perspective-origin: 295.515625px 30px;
+    transform-origin: 295.515625px 30px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+    border-radius: 5px 5px 5px 5px;
+    font: normal normal 300 normal 15px/22px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(25, 25, 25) none 0px;
+    border: 1px solid #808285;
+    box-sizing: content-box;
+}
+
+#form-domain-check{
+	font-size:100%;
+	font-weight: 400;
+	box-shadow: rgb(221, 221, 221) 0px 0px 0px 0px inset;
+    color: rgb(127, 127, 127);
+    height: 50px;
+    width: 100%;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    border-radius: 5px 0 0 5px;
+    font: normal normal 300 normal 18px/22px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(127, 127, 127) none 0px;
+	padding: 5px 10px 5px 10px;
+
+}
+
+
+#span-check-left{
+    color: rgb(127, 127, 127);
+    display: block;
+    float: left;
+    height: 40px;
+    width: 43.34375px;
+    perspective-origin: 21.671875px 20px;
+    transform-origin: 21.671875px 20px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+    border: 0px none rgb(127, 127, 127);
+    font: normal normal 300 normal 18px/40px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(127, 127, 127) none 0px;
+    padding: 10px 0px 10px 0px;
+    line-height: 1.5rem;
+		
+}
+
+#span-check-right{ 
+	background-position: 0px 0px;
+    color: rgb(127, 127, 127);
+    display: block;
+    float: right;
+    height: 40px;
+    width: 43.34375px;
+    perspective-origin: 21.671875px 20px;
+    transform-origin: 21.671875px 20px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+    border: 0px none rgb(127, 127, 127);
+    font: normal normal 300 normal 18px/40px 'Open Sans', Helvetica, Arial, sans-serif;
+    outline: rgb(127, 127, 127) none 0px;
+    padding: 10px 0px 10px 0px;
+    line-height: 1.5rem;
+		
+}
+
+
+#inputDomainName{
+	text-align:left;
+	background-position: 0px 50%;
+    
+    color: rgb(127, 127, 127);
+    height: 38px;
+    vertical-align: text-bottom;
+    width: 90%;
+    perspective-origin: 143px 18px;
+    transform-origin: 143px 18px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 50% / auto padding-box border-box;
+    border-top: 0px none rgb(127, 127, 127);
+    border-right: 0px solid #777;
+    border-bottom: 0px none rgb(127, 127, 127);
+    border-left: 0px none rgb(127, 127, 127);
+    font: normal normal 300 normal 30px/34px 'Open Sans', Helvetica, Arial, sans-serif;
+    
+    outline: rgb(127, 127, 127) none 0px;
+    padding: 0px 0px 0px 0px;
+	
+}
