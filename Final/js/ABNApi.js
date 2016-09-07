@@ -23,7 +23,7 @@ function clearInput(){
 
 
 
-//
+//Function to run when the namecheck button is clicked
 function buttonNameCheck() {
 	if ($('#inputName').val() == ""){
 		alert("Please input a business name.");

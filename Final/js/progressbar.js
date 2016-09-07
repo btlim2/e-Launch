@@ -1,3 +1,6 @@
+//A click event to detect which step in the progress bar is being clicked.
+//It will adjust accordingly by changing the element class either to "is-active" or "is-complete"
+//This is track the progress of the progressbar.
 $('ol.progressbar li').click(function () {
 	
 
@@ -31,9 +34,5 @@ $('ol.progressbar li').click(function () {
 		var nextChild = Number(currentClick) + 1;
 		$('ol.progressbar li:nth-child('+ nextChild +')').attr('class','is-active');
 	}
-
-});
-
-$(document).ready(function() {
 
 });

@@ -46,6 +46,7 @@ window.onclick = function(event) {
 // -------------------------------------------------------------------------------
 
 //A click event which runs when it is being activated.
+//It searched the closest row and gets the input(URL) from it.
 $(document).on("click", "#domainsTable tr .openModal", function(e) {
 	//var $url = $(this).closest("tr")
 						//.find(".tdclass")
@@ -93,7 +94,7 @@ function buttonDomainCheck() {
 	domainQuery($domain);
 }
 
-
+//AJAX GET function to query the API and obtain the JSON
 function domainQuery($eachUrl) {
 	var $table = $('#domainsTable');
 	$('#blob').css("visibility", "visible");
@@ -136,6 +137,7 @@ function domainQuery($eachUrl) {
 	})
 }
 
+//Creating table headers for the table
 function createTableHeader(){
 	var $table = $('#domainsTable');
 	var content = "<tr> <th>Domain Name</th> <th> </th></tr>";
@@ -170,50 +172,3 @@ function clearTableContents() {
 	  table.deleteRow(0);
 	}
 }
-
-function test() {
-		$.ajax({		
-		type: "GET",
-		crossDomain: true,
-		dataType:"html",
-		url: "http://api.sensis.com.au/v1/test/search?key=dvgjjsqnbsxgy3ukt49stxzu&query=cafe&location=melbourne",
-		success: function(items) {
-			console.log(items)
-		}
-	})
-}
-
-/*
-
-function buttonDomainCheck() {
-	var $inputDomainName = $('#inputDomainName');
-	var $domain = "www." + $inputDomainName.val() + ".com";
-	$.ajax({
-		
-		
-		type: "GET",
-		url: "https://api.godaddy.com/v1/domains/available?domain="+ $domain,
-		headers: {"Authorization": "sso-key dKDGRBPDL3c8_7uiSb8E199Fd8zcpLkNVBy:BpXkQkMDaZE3qyeMAt5Emr"},
-		success: function(items) {
-			console.log(items)
-			
-			//$displayName.val(items.domain);
-			//$displayAvailability.val(items.available);
-			
-			}
-	})
-}
-
-*/
-
-/*
-$.ajax({
-	type: "GET",
-	
-	url: "https://api.godaddy.com/v1/domains/available?domain=www.google.com",
-	headers: {
-		"Authorization": "sso-key {VUxVr4wA_KLJLkmQNE6EG24pFzoWgGc}:{QbsjYygLTcDWte3JQbd8y2}"
-	},
-	success: function(body) {console.log(body)}
-})
-*/
