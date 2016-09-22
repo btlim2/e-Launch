@@ -1,0 +1,27 @@
+.websiteLinks:hover { 
+	cursor: pointer;
+	background-color: #2196F3;
+	border: 1px solid #ccc;
+}
+
+.websiteLinks {
+	height:150px; 
+	width:300px;
+	border: 1px solid #ccc;
+	display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.infoLinks {
+	height:150px; 
+	width:300px;
+	border: 1px solid #ccc;
+	display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

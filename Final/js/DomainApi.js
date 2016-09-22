@@ -47,7 +47,7 @@ window.onclick = function(event) {
 
 //A click event which runs when it is being activated.
 //It searched the closest row and gets the input(URL) from it.
-$(document).on("click", "#domainsTable tr .openModal", function(e) {
+$(document).on("click", "#domainsTable tr .btn", function(e) {
 	//var $url = $(this).closest("tr")
 						//.find(".tdclass")
 						//.text();
@@ -88,9 +88,9 @@ function buttonDomainCheck() {
 
 	var url = "https://api.godaddy.com/v1/domains/suggest?query=";
 	clearTableContents();
-
+	createTableHeader();
 	$('.table-results').height(200);
-	var $domain = url + $inputDomainName.val() + "&&&&&&&limit=12&";
+	var $domain = url + $inputDomainName.val() + "&&&&&&&limit=10&";
 	domainQuery($domain);
 }
 
@@ -114,13 +114,12 @@ function domainQuery($eachUrl) {
 				var count = i+1;
 				var countString = count.toString();
 
-				content += '<td id= "'+ countString+'" class="tdclass tdformat">' + "www." +eachItem.domain +  '</td> <td class="tdformat">' + '<img id= "'+ countString+'" class="openModal"'
-					+' onclick="createOpenModal()" src="img/gotolink.png"></img>' + '</td>';
+				content += '<td id= "'+ countString+'" class="btn btn-default tdclass tdformat" + style="background-color:#2196F3; color:white;"  onclick="createOpenModal()">' + "www." +eachItem.domain +'</td> <td></td>';
 
 				var noOfCellsCount = 0;
 
 
-				if (i == 2 || i==5 || i==8 || i==11) {
+				if (i == 1 || i==3 || i==5 || i==7 || i==9) {
 					content += "</tr>";
 					$table.append(content);
 					content = '<tr>';
@@ -140,7 +139,8 @@ function domainQuery($eachUrl) {
 //Creating table headers for the table
 function createTableHeader(){
 	var $table = $('#domainsTable');
-	var content = "<tr> <th>Domain Name</th> <th> </th></tr>";
+	//var content = "<tr> <th>Domain Name</th> <th> </th></tr>";
+	var content = "<tr><th>List of Available Domain Names.</th></tr>";
 	$table.append(content);
 }
 
@@ -172,3 +172,6 @@ function clearTableContents() {
 	  table.deleteRow(0);
 	}
 }
+
+
+

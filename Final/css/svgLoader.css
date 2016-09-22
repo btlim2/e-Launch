@@ -6,6 +6,10 @@
   background: #9d9d9d;
   border-radius: 50%;
   position: absolute;
+  left:50%;
+  margin: 0;
+              -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   box-shadow: 0 0 1rem rgba(255, 255, 255, 0.15);
 }
 

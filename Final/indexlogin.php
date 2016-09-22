@@ -1,3 +1,10 @@
+<?php
+    require 'php/connect.inc.php';
+    require 'php/sessionlogin.php';
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,6 +61,7 @@
     <link rel="stylesheet" type="text/css" href="css/flipbox.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -97,7 +105,7 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>  
                 </ul>
-                <a class="btn btn-default page-scroll" href="login.html" style="float:right; margin:8px 10px; background-color: #2196F3; color: white;">Login</a>
+                <a class="btn btn-default page-scroll" onclick="logout();" style="float:right; margin:8px 10px; background-color: #2196F3; color: white;">Logout</a>
                 <a class="btn btn-default page-scroll" href="http://e-launch.freeforums.net/" style="float:right; margin:8px 10px; background-color: #2196F3; color: white;">Forum</a>
             </div>
             <!-- /.navbar-collapse -->
@@ -116,33 +124,48 @@
                             </h1>
                             <h1 class="text-left" style="color: white; font-size: 48px;">
                                 We help
-                              <a style="color: white; border-bottom: 5px solid #337ab7; text-decoration: none;" class="typewrite" data-period="1500" data-type='[ "to check your business name.", "to check your domain name.", "find you suitable service providers." ]'>
+                              <a  style="color: white; border-bottom: 5px solid #337ab7; text-decoration: none;" class="typewrite" data-period="1500" data-type='[ "to check your business name.", "to check your domain name.", "find you suitable service providers." ]'>
                                 <span class="wrap"></span>
                               </a>
                             </h1>
-                </div>
-            </div>
-            <h1 class="text-left" >
 
+
+                    </div>
+                </div>
+                <h1 class="text-left" >
                     <a id="videoButton" class="youtube btn page-scroll" href="#myModalVideo" data-toggle="modal" style=" font-size:20px; margin:8px 0px;  border-color: transparent; color: white;">
                         <img src="img/video.png" style="width:30px; height:30px;">
                         Video
                     </a>
-                <a class="btn btn-default page-scroll" href="#main" style=" font-size:20px; margin:8px 0px; border-color: #2196F3; background-color:#2196F3; color: white;" onclick="hideTnCPage();">Get Started</a>
-            </h1>
-            <br><br><br><br>
-            <h4 class="text-right" style="position: relative;">
-                <a class="page-scroll" style="color: white; border-bottom: 2px solid #337ab7;" onclick="unHideTnCPage();" href="#termsandconditions">Terms & Conditions</a>
-            </h4>
+                    <a class="btn btn-default page-scroll" href="#main" style=" font-size:20px; margin:8px 0px; border-color: #2196F3; background-color:#2196F3; color: white;" onclick="hideTnCPage();">Get Started</a>
+                </h1>
+                <br><br><br><br>
+                <h4 class="text-right" style="position: relative;">
+                    <a class="page-scroll" style="color: white; border-bottom: 2px solid #337ab7;" onclick="unHideTnCPage();" href="#termsandconditions">Terms & Conditions</a>
+                </h4>
         </div>
 
     </section>
 
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="400" height="300" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal HTML -->
     <div id="myModalVideo" class="modal" style="z-index:2000;">
         <div class="modal-dialog" >
-            <iframe id="video" width="560" height="315" src="//www.youtube.com/embed/KZYsjDnBw9M" frameborder="0" allowfullscreen></iframe>
+
+                    <iframe id="video" width="720" height="576" src="//www.youtube.com/embed/KZYsjDnBw9M" frameborder="0" allowfullscreen></iframe>
+
         </div>
     </div>
 
@@ -402,6 +425,25 @@
                             </table>
                           </div>
                         </div>
+
+                        <div class="theme-buy">
+                          <a class="btn btn-primary btn-large theme-login" href="javascript:;">Check Your Bookmarks</a>
+                        </div>
+                        <div class="theme-popover" style="display: none;">
+                         <div class="theme-poptit">
+                              <a href="javascript:;" title="关闭" class="close">×</a>
+                         </div>
+                         <div class="theme-popbod dform">
+                               <table class = "table" id= "result_table">
+                                <tr>
+                                <th>Website Development Service</th>
+                                <th>Location</th>
+                                <th></th>
+                                </tr>
+                                </table>
+                           </div>
+                        </div>
+
                     </div>
 
                     <div id="learnMore" class="row hide" style="margin-top:30px;  ">
@@ -522,7 +564,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row setup-content step hiddenStepInfo" id="step-5">
             <div class="col-xs-12">
                 <div class="col-md-12 well text-center">
@@ -670,7 +711,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row setup-content step hiddenStepInfo" id="step-6">
             <div class="col-xs-12">
                 <div class="col-md-12 well text-center">
@@ -828,20 +868,114 @@
 
     <!-- Bookmark Javascript -->
     <script src="js/bookmark.js"></script>
-    
+
     <!-- LoginLogout Javascript -->
     <script src="js/LoginLogout.js"></script>
 
     <!-- json_parse Javascript -->
     <script src="js/json_parse.js"></script>
 
-    <!-- Youtube Javascript -->
-    <script src="js/bootstrap.youtubepopup.js"></script>
-    <script src="js/bootstrap.youtubepopup.min.js"></script>
-
     <!-- Google Map Javascript & Api -->
-    <script src="js/GoogleMapApi.js"></script>
+    <script src="js/GoogleMapApi - User.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNFgwjA81nVhc9E_5gYv_XVUSk45qpIJo&signed_in=true&libraries=places&callback=initMap" async defer></script>
+
+<script type="text/javascript">
+    
+    function addResult(result, i) {
+      var results = document.getElementById('results');
+      var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
+      var markerIcon = MARKER_PATH + markerLetter + '.png';
+      var user_NUM = <?php echo $_SESSION['user_id'];?>;
+      var tr = document.createElement('tr');
+      tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+      tr.style.width ='802px';
+      //tr.onclick = function() {
+      //  google.maps.event.trigger(markers[i], 'click');
+      // };
+      console.log(result);
+      var iconTd = document.createElement('td');
+      var businessTd = document.createElement('td');
+      var nameTd = document.createElement('td');
+      var addressTd = document.createElement('td');
+      var vicinityTd = document.createElement('td');
+      var collectButtonTd = document.createElement('td');
+      vicinityTd.setAttribute("id",i.toString());
+      var collectButton = document.createElement('button');
+      var buttonID = 'collectButton'+ i;
+      collectButton.setAttribute("id",buttonID);
+      collectButton.setAttribute("title",'Bookmark');
+      collectButton.setAttribute("value",i);
+      collectButton.setAttribute("class","btn btn-default fa fa-bookmark-o");
+      var icon = document.createElement('img');
+      icon.src = markerIcon;
+      icon.setAttribute('class', 'placeIcon');
+      icon.setAttribute('className', 'placeIcon');
+      var business = document.createTextNode("Name:");
+      var name = document.createTextNode(result.name);
+      var address = document.createTextNode("Address:");
+      var vicinity = document.createTextNode(result.vicinity);
+      collectButton.onclick = function(){goodplus(i,result.name,result.vicinity,user_NUM);
+        //addToTable(result.name,result.vicinity); 
+        //alert ("This service provided");
+      };
+      //document.getElementById(buttonID).onclick = function(){alert("aaa");};
+      iconTd.appendChild(icon);
+      businessTd.appendChild(business);
+      nameTd.appendChild(name);
+      addressTd.appendChild(address);
+      vicinityTd.appendChild(vicinity);
+      collectButtonTd.appendChild(collectButton);
+      tr.appendChild(iconTd);
+      tr.appendChild(businessTd);
+      tr.appendChild(nameTd);
+      tr.appendChild(addressTd);
+      tr.appendChild(vicinityTd);
+      tr.appendChild(collectButtonTd);
+      results.appendChild(tr);
+    }
+
+      jQuery(document).ready(function($) {
+        $('.theme-login').click(function(){
+          $('.theme-popover-mask').fadeIn(100);
+          $('.theme-popover').slideDown(200);
+        })
+        $('.theme-poptit .close').click(function(){
+          $('.theme-popover-mask').fadeOut(100);
+          $('.theme-popover').slideUp(200);
+        })
+      })
+
+    <?php
+    $userID = $_SESSION['user_id'];
+    if ($result = $mysqli->query("SELECT business_name,business_address FROM user_bookmark where user_id = '$userID'")) {
+      while ($row = $result->fetch_object()){
+      $brs[] = $row;
+    }
+        if(!empty($brs))
+          $str = json_encode($brs);
+        else
+            echo "<script type='text/javascript'>alert('Oops,no record found!');</script>";
+    }
+    ?>
+    var json_str1 = '<?php echo $str;?>';
+    var jsonObject1 = json_parse(json_str1);
+    var div = document.getElementById("div_1");
+    var table = document.getElementById("result_table");
+    if(jsonObject1.length==0)
+        console.log('Oops,no record found in this area!');
+    else{
+        for(var i=0; i<jsonObject1.length;i++)
+        {
+            table.insertRow();
+            table.rows[i+1].insertCell();
+            table.rows[i+1].cells[0].appendChild(document.createTextNode(jsonObject1[i].business_name));
+            table.rows[i+1].insertCell();
+            table.rows[i+1].cells[1].appendChild(document.createTextNode(jsonObject1[i].business_address));
+        }
+    }
+
+</script>
+
 
 </body>
 

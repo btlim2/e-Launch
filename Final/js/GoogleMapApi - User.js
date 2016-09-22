@@ -116,17 +116,17 @@ $(document).ready(function()
       $("#map").animate({width:"inherit"});
 });
 
-    function onPlaceChanged() {
-      var ser = $("#service").val();
-      var autoCom = $("#autocomplete").val();
-      if(ser != "" && autoCom !=""){
-          $("#sectionMap").removeClass("col-lg-12");
-          $("#sectionMap").addClass("col-lg-6");
-          $("#sectionListing").removeClass("col-lg-0");
-          $("#sectionListing").addClass("col-lg-6");
-          $("#listing").animate({width:"100%"});
-          $("#map").animate({width:"100%"})
-      }
+function onPlaceChanged() {
+  var ser = $("#service").val();
+  var autoCom = $("#autocomplete").val();
+  if(ser != "" && autoCom !=""){
+      $("#sectionMap").removeClass("col-lg-12");
+      $("#sectionMap").addClass("col-lg-6");
+      $("#sectionListing").removeClass("col-lg-0");
+      $("#sectionListing").addClass("col-lg-6");
+      $("#listing").animate({width:"100%"});
+      $("#map").animate({width:"100%"})
+  }
 
 var place = autocomplete.getPlace();
 if (place.geometry) {  
@@ -211,44 +211,9 @@ function dropMarker(i) {
   };
 }
 
-function addResult(result, i) {
-  var results = document.getElementById('results');
-  var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
-  var markerIcon = MARKER_PATH + markerLetter + '.png';
 
-  var tr = document.createElement('tr');
-  tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
-  tr.style.width ='802px';
-  tr.onclick = function() {
-    google.maps.event.trigger(markers[i], 'click');
-  };
-  console.log(result);
-  var iconTd = document.createElement('td');
-  var businessTd = document.createElement('td');
-  var nameTd = document.createElement('td');
-  var addressTd = document.createElement('td');
-  var vicinityTd = document.createElement('td');
-  var openHourTd = document.createElement('td');
-  var icon = document.createElement('img');
-  icon.src = markerIcon;
-  icon.setAttribute('class', 'placeIcon');
-  icon.setAttribute('className', 'placeIcon');
-  var business = document.createTextNode("Name:");
-  var name = document.createTextNode(result.name);
-  var address = document.createTextNode("Address:");
-  var vicinity = document.createTextNode(result.vicinity);
-  iconTd.appendChild(icon);
-  businessTd.appendChild(business);
-  nameTd.appendChild(name);
-  addressTd.appendChild(address);
-  vicinityTd.appendChild(vicinity);
-  tr.appendChild(iconTd);
-  tr.appendChild(businessTd);
-  tr.appendChild(nameTd);
-  tr.appendChild(addressTd);
-  tr.appendChild(vicinityTd);
-  results.appendChild(tr);
-}
+
+
 
 function clearResults() {
   var results = document.getElementById('results');

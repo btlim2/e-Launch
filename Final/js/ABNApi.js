@@ -1,23 +1,32 @@
+//$('#inputName').focus();
+
+function getStarted(){
+	$('#abncarousel').carousel(0);
+	$('#inputName').val('');
+	$('#inputName').focus();
+
+}
+
 //Prevents website from refreshing when enter is clicked.
 $(function() {
     $("form").submit(function() { return false; });
 });
 
 //Start the function by pressing the enter key.
-$('#inputName').keydown(function (e){
+/*$('#inputName').keydown(function (e){
     if(e.keyCode == 13){
     	$('#inputName').blur();
         buttonNameCheck();
     }
-})
+})*/
 
 //Clear input field and table.
 function clearInput(){
 	var $inputName = $('#inputName');
 	$inputName.val('');
 	$inputName.focus();
-	$('.table-results').height(0);
-	clearTableContents();
+	//$('.table-results').height(0);
+	//clearTableContents();
 	$('#displayResult').html("");
 }
 
@@ -25,16 +34,18 @@ function clearInput(){
 
 //Function to run when the namecheck button is clicked
 function buttonNameCheck() {
+	$('#displayUnavailable').text('');
+
 	if ($('#inputName').val() == ""){
 		alert("Please input a business name.");
 		return;
 	}
 
 	$("#img-submit").removeAttr();
-	$('.table-results').height(200);
+	//$('.table-results').height(200);
 	var inputName = $('#inputName').val();
-	var url = "http://data.gov.au/api/action/datastore_search?resource_id=839cc783-876f-47a2-a70c-0fe606977517&q=" + inputName;
-	clearTableContents();
+	var url = "http://data.gov.au/api/action/datastore_search?resource_id=839cc783-876f-47a2-a70c-0fe606977517&q=" + "'" + inputName + "'";
+	//clearTableContents();
 
 	abnNameQuery(url,inputName);
 	
@@ -42,7 +53,7 @@ function buttonNameCheck() {
 
 //AJAX GET function to query the API and obtain the JSON
 function abnNameQuery($eachUrl, inputName) {
-	var $table = $('#abn-table');
+	//var $table = $('#abn-table');
 	$('#inputName').attr("disabled", "disabled");
 	$('#blob').css("visibility", "visible");
 
@@ -56,29 +67,18 @@ function abnNameQuery($eachUrl, inputName) {
 			var arrayRecords = data.result.records;
 			createTableHeaderContents();
 			if (inputABNSearchedQuery(inputName, arrayRecords)){
-				displayResult = "<tr><td class = \"green\">" + inputName + " is available!</td></tr>";
-				
-				content = "<tr><td class = \"green\">" + inputName + "</td><td class = \"green\"> " + "YES" + "</td></tr>";
-				$table.append(content);
+				displayAvailable = inputName + " is available!";
+				//$('#displayAvailable').html(displayAvailable);
+				//$('#displayAvailable').css("visibility", "visible");
+				$('#displayAbnName').html(displayAvailable);
+				slideAbnNext(); //FROM CAROUSELCONTROLLER.JS
 			}else {
-				displayResult = "<tr><td class = \"red\">" + inputName + " is not available!</td></tr>";
-				
-				content = "<tr><td class = \"red\">" + inputName + "</td><td class = \"red\"> " + "NO" + "</td></tr>";
-				$table.append(content);
+				displayUnavailable = inputName + " is not available!";
+				$('#displayUnavailable').html(displayUnavailable);
+				$('#displayUnavailable').css("visibility", "visible");
+
 			}
 
-			$('#displayResult').html(displayResult);
-			
-			$.each(arrayRecords, function(i, eachRecord) {
-				var businessName = eachRecord["Business Name"];
-				var businessStatus = eachRecord["Business Name Status"];
-				
-				if (businessStatus == "Deregistered"){
-					content = "<tr><td>" + businessName + "</td>" + determineCellColorBasedOnBusinessStatus(businessStatus) + "</tr>";
-					$table.append(content);
-				}
-			});
-			
 			$('#inputName').removeAttr("disabled");
 			$('#blob').css("visibility", "collapse");
 		}
@@ -92,8 +92,10 @@ function inputABNSearchedQuery(inputName, records) {
 	for (i = 0; i < records.length; i++) {
 		var eachRecord = records[i];
 		
-		if (inputName.toUpperCase() == eachRecord["Business Name"].toUpperCase())
-			return false;
+		if (inputName.toUpperCase() == eachRecord["Business Name"].toUpperCase()){
+			if (eachRecord["Business Name Status"] == "Registered")
+				return false;
+		}
 	}
 	return true;
 }

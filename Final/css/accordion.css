@@ -1,0 +1,72 @@
+#stepsAccordion {
+    text-align: center; 
+    height: 50px; 
+    border-bottom: none; 
+    content:none; 
+    font-weight:bold;
+}
+
+#stepsAccordion::after {
+    content: '';
+}
+
+#stepsAccordion.active {
+    content: 'Steps ^';
+}
+
+#stepsAccordion:hover{
+    background-color: #2196F3; /* #d8d8d8 || #2196F3*/
+    color: white;
+}
+
+
+
+button.accordion {
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-family: RalewaySemiBold,Helvetica,sans-serif;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #2196F3; /* #d8d8d8 || #2196F3*/
+    color: white;
+}
+
+button.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: black;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796";
+}
+
+div.panel {
+    color: black;
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+    font-family: RalewaySemiBold,Helvetica,sans-serif;
+}
+
+div.panel.show {
+    opacity: 1;
+    background-color: white;
+    max-height: 500px;
+    font-family: RalewaySemiBold,Helvetica,sans-serif;
+}
